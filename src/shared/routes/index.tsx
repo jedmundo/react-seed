@@ -11,10 +11,12 @@ export const Router: FC = () => {
 
   return (
     <>
-      <div>
-        <Link to={ROUTE_NAME.dashboard}>Dashboard</Link>
-        <Link to={ROUTE_NAME.home}>Home</Link>
-      </div>
+      {isAuthenticated && (
+        <div>
+          <Link to={ROUTE_NAME.dashboard}>Dashboard</Link>
+          <Link to={ROUTE_NAME.home}>Home</Link>
+        </div>
+      )}
       {!isAuthenticated ? <PublicRoutes /> : <PrivateRoutes />}
     </>
   )

@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { Switch, Route } from 'react-router'
+import { Switch, Route, Redirect } from 'react-router'
 
 import { ROUTE_NAME } from './routes-names'
 import { Login } from '../../features/login/login'
@@ -16,6 +16,7 @@ const PrivateRoutes: React.FC = () => {
       <Route path={ROUTE_NAME.home} component={Home} />
       <Route path={ROUTE_NAME.login} component={Login} />
       <Route path={ROUTE_NAME.dashboard} component={Dashboard} />
+      <Redirect from="*" to="/" />
     </Switch>
   )
 }
