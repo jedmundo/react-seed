@@ -1,4 +1,4 @@
-import Axios, { AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
@@ -7,7 +7,7 @@ import { CONFIGURATION } from '../../../shared/configuration/configuration'
 
 export const PlaceholderService = {
   getPlaceholders: (): Observable<Todo[]> =>
-    from(Axios.get(CONFIGURATION.todos.fetchTodos)).pipe(
+    from(axios.get(CONFIGURATION.todos.fetchTodos)).pipe(
       map((result: AxiosResponse) => parseTodos(result))
     ),
 }

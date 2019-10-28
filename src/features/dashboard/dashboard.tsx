@@ -4,7 +4,7 @@ import { PlaceholderService } from './services/placeholder.service'
 
 const Dashboard: React.FC = () => {
   const [name, setName] = useState('')
-  const value = useObservable(PlaceholderService.getPlaceholders)
+  const value = useObservable(PlaceholderService.getPlaceholders, [])
 
   return (
     <>
