@@ -18,8 +18,5 @@ export const todosReducer = createReducer<TodoState, TodoAction>(INITIAL_STATE)
   }))
   .handleAction(removeTodo, (state, action) => ({
     ...state,
-    todoList: state.todoList.splice(
-      state.todoList.findIndex(todo => todo.label === action.payload.label),
-      1
-    ),
+    todoList: state.todoList.filter(todo => todo.label !== action.payload.label),
   }))

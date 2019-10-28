@@ -1,25 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { createTodo, getTodos } from '../../shared/store/todos/actions'
+import { createTodo, getTodos, removeTodo } from '../../shared/store/todos/actions'
+import { Todo } from '../../shared/store/todos/types'
 
 export const Home: React.FC = () => {
   const dispatch = useDispatch()
-  const todoList = useSelector((state: any) => state.todosReducer.todoList)
+  const todoList: Todo[] = useSelector((state: any) => state.todosReducer.todoList)
   const [todo, setTodo] = useState('')
 
   useEffect(() => {
     dispatch(getTodos())
-  }, [])
+  }, [dispatch])
 
-  const addTodo = () => dispatch(createTodo(todo))
+  const addTodo = useCallback(() => dispatch(createTodo(todo)), [todo, dispatch])
+  const deleteTodo = useCallback((todoToRemove: Todo): any => dispatch(removeTodo(todoToRemove)), [
+    dispatch,
+  ])
 
   return (
     <div>
       <h3>TODOS</h3>
       <input onChange={e => setTodo(e.target.value)} />
       <button onClick={addTodo}>Add</button>
-      <div>{!!todoList && JSON.stringify(todoList)}</div>
+      <div>
+        {todoList.map((todo, index) => (
+          <div key={index}>
+            {todo.label}
+            <button onClick={() => deleteTodo(todo)}>Remove</button>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
