@@ -13,7 +13,7 @@ const INITIAL_STATE: SessionState = {
 }
 
 export const sessionReducer = createReducer<SessionState, SessionAction>(INITIAL_STATE)
-  .handleAction(loginRequest, state => ({ ...state, loading: true }))
+  .handleAction(loginRequest, state => ({ ...state, loading: true, isAuthenticated: true }))
   .handleAction(loginSuccess, state => ({
     ...state,
     loading: false,
