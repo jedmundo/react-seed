@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { createTodo, getTodos, removeTodo } from '../../shared/store/todos/actions'
+import { createTodo, removeTodo, getTodos } from '../../shared/store/todos/actions'
 import { Todo } from '../../shared/store/todos/types'
 
 export const Home: React.FC = () => {
@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
   const [todo, setTodo] = useState('')
 
   useEffect(() => {
-    dispatch(getTodos())
+    dispatch(getTodos.request())
   }, [dispatch])
 
   const addTodo = useCallback(() => dispatch(createTodo(todo)), [todo, dispatch])
@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
       <div>
         {todoList.map((todo, index) => (
           <div key={index}>
-            {todo.label}
+            {todo.title}
             <button onClick={() => deleteTodo(todo)}>Remove</button>
           </div>
         ))}

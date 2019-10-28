@@ -1,6 +1,7 @@
-import { createStore, Store } from 'redux'
+import { createStore, applyMiddleware, compose, Store } from 'redux'
+import { createEpicMiddleware } from 'redux-observable'
 
-import { rootReducer } from './rootReducer'
+import { rootReducer, rootEpic } from './root'
 import { SessionState } from './session/types'
 import { TodoState } from './todos/types'
 
@@ -9,7 +10,17 @@ export interface ApplicationState {
   todos: TodoState
 }
 
-// const sagaMiddleware = createSagaMiddleware()
-// sagaMiddleware.run(rootSaga)
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export const store: Store<ApplicationState> = createStore(rootReducer)
+const epicMiddleware = createEpicMiddleware()
+
+export default function configureStore() {
+  const store: Store<ApplicationState> = createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(epicMiddleware))
+  )
+
+  epicMiddleware.run(rootEpic)
+
+  return store
+}
