@@ -27,7 +27,6 @@
     "noImplicitUseStrict": false,
     "noImplicitThis": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true,
   },
   "include": [
     "src"
