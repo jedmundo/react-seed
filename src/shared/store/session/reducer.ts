@@ -1,7 +1,10 @@
-import { createReducer } from 'typesafe-actions'
+import { ActionType, createReducer } from 'typesafe-actions'
 
 import { SessionState } from './types'
 import { loginRequest, loginSuccess } from './actions'
+import * as Actions from './actions'
+
+export type SessionAction = ActionType<typeof Actions>
 
 const INITIAL_STATE: SessionState = {
   isAuthenticated: false,
@@ -9,13 +12,10 @@ const INITIAL_STATE: SessionState = {
   error: false,
 }
 
-const loginRequestReduce = (state = INITIAL_STATE) => ({ ...state, loading: true })
-const loginSuccessReduce = (state = INITIAL_STATE) => ({
-  ...state,
-  loading: false,
-  isAuthenticated: true,
-})
-
-export const sessionReducer = createReducer(INITIAL_STATE)
-  .handleAction(loginRequest, loginRequestReduce)
-  .handleAction(loginSuccess, loginSuccessReduce)
+export const sessionReducer = createReducer<SessionState, SessionAction>(INITIAL_STATE)
+  .handleAction(loginRequest, state => ({ ...state, loading: true }))
+  .handleAction(loginSuccess, state => ({
+    ...state,
+    loading: false,
+    isAuthenticated: true,
+  }))
