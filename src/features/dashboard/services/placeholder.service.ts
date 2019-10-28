@@ -2,8 +2,8 @@ import axios, { AxiosResponse } from 'axios'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { Todo } from '../../../shared/store/todos/types'
-import { CONFIGURATION } from '../../../shared/configuration/configuration'
+import { Todo } from '@shared/store/todos/types'
+import { CONFIGURATION } from '@shared/configuration/configuration'
 
 export const PlaceholderService = {
   getPlaceholders: (): Observable<Todo[]> =>
