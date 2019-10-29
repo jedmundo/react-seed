@@ -1,3 +1,5 @@
+This project is a seed react project which combines React + Redux + Typescript + React Hooks with a reactive programming approach with RxJs + redux-observable + typesafe-actions, which makes it very clean and typesafe.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
