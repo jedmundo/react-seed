@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "craco build && rm build/static/js/*.map",
     "test": "craco test",
     "eject": "craco eject",
     "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose"
