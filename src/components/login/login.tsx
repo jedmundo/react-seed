@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import { loginRequest } from '../../shared/store/session/actions'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+
+import { loginRequest } from '../../shared/store/session/actions'
 
 export const Login: React.FC = () => {
+  const { t } = useTranslation()
   const state = useSelector(state => state)
   const dispatch = useDispatch()
   const [username, setUsername] = useState('')
@@ -12,10 +15,10 @@ export const Login: React.FC = () => {
 
   return (
     <div>
-      <h3>LOGIN</h3>
+      <h3>{t('login:title')}</h3>
       <div>
-        Username: <input onChange={e => setUsername(e.target.value)} />
-        Password: <input onChange={e => setPassword(e.target.value)} />
+        {t('login:username')}: <input onChange={e => setUsername(e.target.value)} />
+        {t('login:password')}: <input onChange={e => setPassword(e.target.value)} />
       </div>
       <button onClick={login}>Login</button>
       <div>State is {JSON.stringify(state)}</div>
