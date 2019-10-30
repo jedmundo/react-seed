@@ -7,12 +7,12 @@ This project is a seed react project which combines React + Redux + Typescript +
 - Language: Typescript
 - State management: Redux
 - Side effects: Redux-observable + RxJs
+- i18n - react-intl
+- Styling: Styled-components
 - Environment dependant variables: Dotenv
 - Bundling tool: Create react app (CRA) + Craco (to allow aliased imports)
 
 ## Missing/TODO:
-- i18n - react-intl
-- Styling: Styled-components
 - Unit tests - Jest + Enzyme
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
