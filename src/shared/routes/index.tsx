@@ -1,10 +1,8 @@
 import React, { FC } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 import PublicRoutes from './public-routes'
 import PrivateRoutes from './private-routes'
-import { ROUTE_NAME } from './routes-names'
 import { Topbar } from '../../components/topbar/topbar'
 
 export const Router: FC = () => {
@@ -12,13 +10,7 @@ export const Router: FC = () => {
 
   return (
     <>
-      <Topbar />
-      {isAuthenticated && (
-        <div>
-          <Link to={ROUTE_NAME.dashboard}>Dashboard</Link>
-          <Link to={ROUTE_NAME.home}>Home</Link>
-        </div>
-      )}
+      <Topbar isAuthenticated={isAuthenticated} />
       {!isAuthenticated ? <PublicRoutes /> : <PrivateRoutes />}
     </>
   )
