@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router'
 import { useSelector } from 'react-redux'
 
 import { ROUTE_NAME } from './routes-names'
-import { Login } from '../../features/login/login'
+import { Login } from '../../components/login/login'
 
 const PublicRoutes: React.FC = () => {
   const isAuthenticated = useSelector((state: any) => state.sessionReducer.isAuthenticated)

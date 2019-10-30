@@ -2,11 +2,11 @@ import React, { lazy } from 'react'
 import { Switch, Route, Redirect } from 'react-router'
 
 import { ROUTE_NAME } from './routes-names'
-import { Login } from '../../features/login/login'
-import { Home } from '../../features/home/home'
+import { Login } from '../../components/login/login'
+import { Home } from '../../components/home/home'
 
 const Dashboard = lazy(() =>
-  import(/*webpackChunkName:'dashboard'*/ '../../features/dashboard/dashboard')
+  import(/*webpackChunkName:'dashboard'*/ '../../components/dashboard/dashboard')
 )
 
 const PrivateRoutes: React.FC = () => {
