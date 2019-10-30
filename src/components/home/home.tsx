@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import { TextField } from '@material-ui/core'
 
-import { createTodo, removeTodo, getTodos } from '../../shared/store/todos/actions'
-import { Todo } from '../../shared/store/todos/types'
+import { createTodo, removeTodo, getTodos } from '@shared/store/todos/actions'
+import { Todo } from '@shared/store/todos/types'
+import Button from '@material-ui/core/Button'
+import { TodoItem, InputContainer } from './home.styled'
 
 export const Home: React.FC = () => {
   const { t } = useTranslation()
@@ -23,14 +26,20 @@ export const Home: React.FC = () => {
   return (
     <div>
       <h3>{t('home:subtitle')}</h3>
-      <input onChange={e => setTodo(e.target.value)} />
-      <button onClick={addTodo}>Add</button>
+      <InputContainer>
+        <TextField onChange={e => setTodo(e.target.value)} label={t('home:new')} />
+        <Button variant="outlined" color="primary" onClick={addTodo}>
+          {t('home:add')}
+        </Button>
+      </InputContainer>
       <div>
         {todoList.map((todo, index) => (
-          <div key={index}>
+          <TodoItem key={index}>
             {todo.title}
-            <button onClick={() => deleteTodo(todo)}>Remove</button>
-          </div>
+            <Button onClick={() => deleteTodo(todo)} variant="outlined">
+              {t('home:remove')}
+            </Button>
+          </TodoItem>
         ))}
       </div>
     </div>

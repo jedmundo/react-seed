@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import Button from '@material-ui/core/Button'
 
 import { loginRequest } from '@shared/store/session/actions'
 import { StyledDiv } from './login.styled'
+import { TextField } from '@material-ui/core'
 
 export const Login: React.FC = () => {
   const { t } = useTranslation()
@@ -18,12 +20,14 @@ export const Login: React.FC = () => {
     <div>
       <h3>{t('login:title')}</h3>
       <StyledDiv>
-        {t('login:username')}: <input onChange={e => setUsername(e.target.value)} />
-        {t('login:password')}: <input onChange={e => setPassword(e.target.value)} />
+        <TextField onChange={e => setUsername(e.target.value)} label={t('login:username')} />
+        <TextField onChange={e => setPassword(e.target.value)} label={t('login:password')} />
       </StyledDiv>
       <StyledDiv>
-        Press login without credentials to see more routes:
-        <button onClick={login}>Login</button>
+        <p>Press login without credentials to see more routes:</p>
+        <Button variant="outlined" color="primary" onClick={login}>
+          {t('login:title')}
+        </Button>
       </StyledDiv>
       <StyledDiv>Current Redux state:</StyledDiv>
       <div>{JSON.stringify(state)}</div>

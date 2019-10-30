@@ -7,8 +7,8 @@ This project is a seed react project which combines React + Redux + Typescript +
 - Language: Typescript
 - State management: Redux
 - Side effects: Redux-observable + RxJs
-- i18n - react-intl
-- Styling: Styled-components
+- i18n - react-i18next
+- Styling: Material UI + Styled-components
 - Environment dependant variables: Dotenv
 - Bundling tool: Create react app (CRA) + Craco (to allow aliased imports)
 
