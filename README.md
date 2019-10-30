@@ -1,4 +1,17 @@
+#Goal
+
 This project is a seed react project which combines React + Redux + Typescript + React Hooks with a reactive programming approach with RxJs + redux-observable + typesafe-actions, which makes it very clean and typesafe.
+
+## Done so far:
+- Framework: React
+- Language: Typescript
+- State management: Redux
+- Side effects: Redux-observable + RxJs
+- Environment dependant variables: Dotenv
+
+## Missing/TODO:
+- i18n - react-intl
+- Unit tests - Jest + Enzyme
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
