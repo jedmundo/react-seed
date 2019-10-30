@@ -12,6 +12,7 @@ This project is a seed react project which combines React + Redux + Typescript +
 
 ## Missing/TODO:
 - i18n - react-intl
+- Styling: Styled-components
 - Unit tests - Jest + Enzyme
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
