@@ -1,17 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useObservable } from 'rxjs-hooks'
+import { useTranslation } from 'react-i18next'
+
 import { PlaceholderService } from './services/placeholder.service'
 
 const Dashboard: React.FC = () => {
-  const [name, setName] = useState('')
-  const value = useObservable(PlaceholderService.getPlaceholders, [])
+  const { t } = useTranslation()
+  const users = useObservable(PlaceholderService.getPlaceholders, [])
 
   return (
     <>
-      <div>DASHBORD WORKS</div>
-      <div>{name}</div>
-      <button onClick={() => setName('TEST')}>SET</button>
-      <div>{JSON.stringify(value)}</div>
+      <h3>{t('dashboard:subtitle')}</h3>
+      <ul>
+        {users.map((user, index) => (
+          <li key={index}>
+            <div>{user.name}</div>
+            <div>{user.username}</div>
+            <div>{user.email}</div>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }

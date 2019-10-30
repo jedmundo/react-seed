@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 import { createTodo, removeTodo, getTodos } from '../../shared/store/todos/actions'
 import { Todo } from '../../shared/store/todos/types'
 
 export const Home: React.FC = () => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const todoList: Todo[] = useSelector((state: any) => state.todosReducer.todoList)
   const [todo, setTodo] = useState('')
@@ -20,7 +22,7 @@ export const Home: React.FC = () => {
 
   return (
     <div>
-      <h3>TODOS</h3>
+      <h3>{t('home:subtitle')}</h3>
       <input onChange={e => setTodo(e.target.value)} />
       <button onClick={addTodo}>Add</button>
       <div>

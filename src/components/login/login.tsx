@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { loginRequest } from '../../shared/store/session/actions'
+import { loginRequest } from '@shared/store/session/actions'
+import { StyledDiv } from './login.styled'
 
 export const Login: React.FC = () => {
   const { t } = useTranslation()
@@ -16,12 +17,16 @@ export const Login: React.FC = () => {
   return (
     <div>
       <h3>{t('login:title')}</h3>
-      <div>
+      <StyledDiv>
         {t('login:username')}: <input onChange={e => setUsername(e.target.value)} />
         {t('login:password')}: <input onChange={e => setPassword(e.target.value)} />
-      </div>
-      <button onClick={login}>Login</button>
-      <div>State is {JSON.stringify(state)}</div>
+      </StyledDiv>
+      <StyledDiv>
+        Press login without credentials to see more routes:
+        <button onClick={login}>Login</button>
+      </StyledDiv>
+      <StyledDiv>Current Redux state:</StyledDiv>
+      <div>{JSON.stringify(state)}</div>
     </div>
   )
 }
