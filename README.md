@@ -1,4 +1,4 @@
-#Goal
+# Goal
 
 This project is a seed react project which combines React + Redux + Typescript + React Hooks with a reactive programming approach with RxJs + redux-observable + typesafe-actions, which makes it very clean and typesafe.
 
@@ -8,6 +8,7 @@ This project is a seed react project which combines React + Redux + Typescript +
 - State management: Redux
 - Side effects: Redux-observable + RxJs
 - Environment dependant variables: Dotenv
+- Bundling tool: Create react app (CRA)
 
 ## Missing/TODO:
 - i18n - react-intl
