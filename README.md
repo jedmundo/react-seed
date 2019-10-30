@@ -8,7 +8,7 @@ This project is a seed react project which combines React + Redux + Typescript +
 - State management: Redux
 - Side effects: Redux-observable + RxJs
 - Environment dependant variables: Dotenv
-- Bundling tool: Create react app (CRA)
+- Bundling tool: Create react app (CRA) + Craco (to allow aliased imports)
 
 ## Missing/TODO:
 - i18n - react-intl
