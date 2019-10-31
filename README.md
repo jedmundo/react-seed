@@ -1,6 +1,6 @@
 # Goal
 
-This project is a React seed boilerplate which combines [ReactJs](https://reactjs.org/) + [Redux](https://redux.js.org/) + [Typescript](https://www.typescriptlang.org/) + [React Hooks](https://reactjs.org/docs/hooks-intro.html) with a reactive programming approach with [RxJs](https://rxjs-dev.firebaseapp.com/) + [redux-observable](https://redux-observable.js.org/) + [typesafe-actions](https://github.com/piotrwitek/typesafe-actions), which makes it a clean and well-structured boilerplate for dealing with redux and Typescript. This project was partially inspired by [this talk](https://www.youtube.com/watch?v=AslncyG8whg) about how they use it in Netflix.
+This project is a React project boilerplate which combines [ReactJs](https://reactjs.org/) + [Redux](https://redux.js.org/) + [Typescript](https://www.typescriptlang.org/) + [React Hooks](https://reactjs.org/docs/hooks-intro.html) with a reactive programming approach with [RxJs](https://rxjs-dev.firebaseapp.com/) + [redux-observable](https://redux-observable.js.org/) + [typesafe-actions](https://github.com/piotrwitek/typesafe-actions), which makes it a clean and well-structured boilerplate for dealing with redux and Typescript. This project was partially inspired by [this talk](https://www.youtube.com/watch?v=AslncyG8whg) about how they use it in Netflix.
 
 ## What it supports and technologies used:
 - Framework: React
