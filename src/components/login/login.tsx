@@ -30,7 +30,7 @@ export const Login: React.FC = () => {
         </Button>
       </StyledDiv>
       <StyledDiv>Current Redux state:</StyledDiv>
-      <div>{JSON.stringify(state)}</div>
+      <code>{JSON.stringify(state)}</code>
     </div>
   )
 }

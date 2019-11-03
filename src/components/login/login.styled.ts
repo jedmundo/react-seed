@@ -6,4 +6,8 @@ export const StyledDiv = styled.div({
   '> div': {
     marginRight: '10px',
   },
+
+  button: {
+    marginTop: 10
+  }
 })

@@ -1,8 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AppHeader, StyledLink } from './app-header.styled'
+import { TopbarContainer, StyledLink } from './topbar.styled'
 import { ROUTE_NAME } from '@shared/routes/routes-names'
+import { Button } from '@material-ui/core'
 
 interface OwnProps {
   isAuthenticated: boolean
@@ -16,7 +17,7 @@ export const Topbar: React.FC<OwnProps> = ({ isAuthenticated }) => {
   }
 
   return (
-    <AppHeader>
+    <TopbarContainer>
       <div>
         <StyledLink to={ROUTE_NAME.login}>{t('login:title')}</StyledLink>
         {isAuthenticated && (
@@ -28,9 +29,13 @@ export const Topbar: React.FC<OwnProps> = ({ isAuthenticated }) => {
       </div>
       <div>
         Choose a language:
-        <button onClick={() => changeLanguage('en')}>English</button>
-        <button onClick={() => changeLanguage('nl')}>Dutch</button>
+        <Button variant="outlined" color="primary" onClick={() => changeLanguage('en')}>
+          English
+        </Button>
+        <Button variant="outlined" color="primary" onClick={() => changeLanguage('nl')}>
+          Dutch
+        </Button>
       </div>
-    </AppHeader>
+    </TopbarContainer>
   )
 }

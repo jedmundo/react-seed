@@ -3,13 +3,14 @@ import { useObservable } from 'rxjs-hooks'
 import { useTranslation } from 'react-i18next'
 
 import { PlaceholderService } from './services/placeholder.service'
+import { DashboardContainer } from './dashboard.styled'
 
 const Dashboard: React.FC = () => {
   const { t } = useTranslation()
   const users = useObservable(PlaceholderService.getPlaceholders, [])
 
   return (
-    <>
+    <DashboardContainer>
       <h3>{t('dashboard:subtitle')}</h3>
       <ul>
         {users.map((user, index) => (
@@ -20,7 +21,7 @@ const Dashboard: React.FC = () => {
           </li>
         ))}
       </ul>
-    </>
+    </DashboardContainer>
   )
 }
 

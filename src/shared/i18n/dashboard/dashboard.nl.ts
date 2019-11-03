@@ -1,4 +1,4 @@
 export const DASHBOARD_TRANSLATIONS_NL = {
   title: 'Dashboard',
-  subtitle: 'Gegevens worden opgehaald met behulp van RxJs',
+  subtitle: 'Deze component is lui geladen en de gegevens worden opgehaald met behulp van RxJ\'s via een eenvoudig XHR-verzoek',
 }
